@@ -8,13 +8,14 @@ import getopt
 myAuthHash = 'some567hash234='
 
 def usage():
-	print ('Usage:')
-	print ('python ' + sys.argv[0] + ' [-i|--ip <Destination IP>] [-a|--auth <Authentication Hash>] [-h|--help] [-d| --debug]')
+    print ('Usage:')
+    print ('python ' + sys.argv[0] + ' [-i|--ip <Destination IP>] [-a|--auth <Authentication Hash>] [-h|--help] [-d| --debug]')
 
 def main(argv):
 	# Variables
 	global _debug
 	auth = myAuthHash
+	ip = '127.0.0.1'
 	_debug = False
 	
 	# Define and get script arguments
@@ -23,7 +24,7 @@ def main(argv):
 	try:
 		opts, args = getopt.getopt(sys.argv[1:], "ha:i:d", ["help", "auth=", "ip=", "debug"])
 	except getopt.GetoptError as err:
-		print (err)
+		print (err)	# Will print something like "option not recognized".
 		usage()
 		sys.exit(2)
 	
@@ -46,9 +47,10 @@ def main(argv):
 		print ('\n***Further arguments ' + str(args) + ' are ignored.***\n')
 
 	if _debug:
-		print ('myAuthHash = ' + myAuthHash)
+		print ('myAuthHash default = ' + myAuthHash)
 		print ('opts = ' + str(opts))
 		print ('args = ' + str(args))
+		
 		if auth == "":
 			print ('auth = "nix"')
 		else:
