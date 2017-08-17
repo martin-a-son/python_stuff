@@ -45,7 +45,7 @@ def main(argv):
 	# Ignore any unwanted arguments.
 	if args:
 		print ('\n***Further arguments ' + str(args) + ' are ignored.***\n')
-		
+
 	if _debug:
 		print ('myAuthHash default = ' + myAuthHash)
 		print ('opts = ' + str(opts))
@@ -60,6 +60,6 @@ def main(argv):
 			print ('ip = "nix"')
 		else:
 			print ('ip = ' + ip)
-			
+
 if __name__ == "__main__":
     main(sys.argv[1:])
