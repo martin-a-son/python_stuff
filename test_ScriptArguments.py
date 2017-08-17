@@ -1,11 +1,11 @@
 #!C:\etc\Python27\python.EXE
 
-# Uebung mit Scriptoptionen
+# Little exercise with Scriptoptions
 
 import sys
 import getopt
 
-myAuthHash = 'bWFydGluOm15b28xMDA='
+myAuthHash = 'some567hash234='
 
 def usage():
     print ('Usage:')
@@ -14,7 +14,7 @@ def usage():
     print ('-d: debug mode')
 
 def main(argv):
-	# Variablen definieren und initialisieren
+	# Variables
 	global _debug
 	auth = myAuthHash
 	_debug = False
@@ -40,7 +40,7 @@ def main(argv):
 	if _debug:
 		print ('myAuthHash = ' + myAuthHash)
 		if auth == "":
-			print ('auth = "nix"')	# Da eingangs "auth = myAuthHash" gilt, sollte niemals "nix" ausgegeben werden.
+			print ('auth = "nix"')	# Initially we have "auth = myAuthHash", so "nix" should never be reached.
 		else:
 			print ('auth = ' + auth)
 
